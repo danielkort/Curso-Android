@@ -1,5 +1,7 @@
 package devandroid.kort.applistacurso.model;
 
+import androidx.annotation.NonNull;
+
 public class Pessoa {
 
     // Construtor
@@ -47,4 +49,16 @@ public class Pessoa {
         this.telefoneContato = telefoneContato;
     }
 
+    // To String - Para textos - Para Strings de Caracteres
+
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "primeiroNome='" + primeiroNome + '\'' +
+                ", sobreNome='" + sobreNome + '\'' +
+                ", cursoDesejado='" + cursoDesejado + '\'' +
+                ", telefoneContato='" + telefoneContato + '\'' +
+                '}';
+    }
 }
