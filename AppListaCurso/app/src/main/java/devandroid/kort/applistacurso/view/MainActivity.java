@@ -14,9 +14,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.kort.applistacurso.R;
+import devandroid.kort.applistacurso.controller.PessoaController;
 import devandroid.kort.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    PessoaController controller;
 
     Pessoa pessoa;
 
@@ -41,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        controller = new PessoaController();
+        controller.toString();
 
         pessoa = new Pessoa();
         // Atribuir conteúdo, dados, valores para o Objeto
@@ -88,12 +94,12 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
                 pessoa.setSobreNome(editSobrenomeAluno.getText().toString());
                 pessoa.setCursoDesejado(editNomeCurso.getText().toString());
-                pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
+                Toast.makeText(MainActivity.this,"Salvo "+pessoa.toString(),Toast.LENGTH_LONG).show();
 
-                Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
-            }
-        });
+                controller.salvar(pessoa);
 
+                Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show(); master           }        });
+      
         dadosPessoa = "Primeiro nome: ";
         dadosPessoa += pessoa.getPrimeiroNome();
         dadosPessoa += " Sobrenome: ";
