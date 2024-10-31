@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"Volte sempre!",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Volte sempre!", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
@@ -94,15 +94,12 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
                 pessoa.setSobreNome(editSobrenomeAluno.getText().toString());
                 pessoa.setCursoDesejado(editNomeCurso.getText().toString());
-                pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
-
                 Toast.makeText(MainActivity.this,"Salvo "+pessoa.toString(),Toast.LENGTH_LONG).show();
 
                 controller.salvar(pessoa);
 
-            }
-        });
-
+                Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show(); master           }        });
+      
         dadosPessoa = "Primeiro nome: ";
         dadosPessoa += pessoa.getPrimeiroNome();
         dadosPessoa += " Sobrenome: ";
@@ -112,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         dadosPessoa += " Telefone de Contato: ";
         dadosPessoa += pessoa.getTelefoneContato();
 
-        Log.i("POOAndroid",pessoa.toString());
+        Log.i("POOAndroid", pessoa.toString());
 
     }
 }
