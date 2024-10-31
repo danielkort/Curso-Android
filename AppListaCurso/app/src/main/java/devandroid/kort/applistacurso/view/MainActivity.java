@@ -14,9 +14,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.kort.applistacurso.R;
+import devandroid.kort.applistacurso.controller.PessoaController;
 import devandroid.kort.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    PessoaController controller;
 
     Pessoa pessoa;
 
@@ -41,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        controller = new PessoaController();
+        controller.toString();
 
         pessoa = new Pessoa();
         // Atribuir conteúdo, dados, valores para o Objeto
@@ -91,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
 
                 Toast.makeText(MainActivity.this,"Salvo "+pessoa.toString(),Toast.LENGTH_LONG).show();
+
+                controller.salvar(pessoa);
+
             }
         });
 
