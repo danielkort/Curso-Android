@@ -37,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent telaPrincipal = new Intent(SplashActivity.this,
-                        MainActivity.class);
+                        GasEtaActivity.class);
 
                 startActivity(telaPrincipal);
                 finish();
